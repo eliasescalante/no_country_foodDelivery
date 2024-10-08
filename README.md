@@ -1,4 +1,4 @@
-# Nombre del Proyecto
+# Hay que ponerle un nombre XD
 
 Descripción breve del proyecto, qué hace y su propósito.
 
