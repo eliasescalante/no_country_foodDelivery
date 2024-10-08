@@ -23,4 +23,5 @@ userSchema.pre('save', async function (next) {
     next(); // Asegúrate de llamar a next() después de hashear
 });
 
-export default mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
+export default User;

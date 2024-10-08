@@ -9,4 +9,5 @@ const orderSchema = new mongoose.Schema({
     assignedDriver: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, // Repartidor
 }, { timestamps: true });
 
-export default mongoose.model('Order', orderSchema);
+const Order = mongoose.model('Order', orderSchema);
+export default Order;
