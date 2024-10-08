@@ -1,24 +1,26 @@
-//falta configurar la variable de entorno (.env en la raíz)
-require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
+// ya configure la variable de entorno
+import express from 'express';
+import cors from 'cors';
+import mongoose from 'mongoose';
+import configObject from './config/config.js';
+import userRoutes from './routes/userRoutes.js';
+import open from 'open';  // Importa el paquete open
 
 const app = express();
+const { mongo_url, puerto } = configObject;
+// conexion a la base de datos [done mi cluster]
+mongoose.connect(mongo_url)
+    .then(() => console.log("Conexión exitosa!"))
+    .catch((error) => console.log("Error en la conexión", error));
+
 app.use(cors());
 app.use(express.json());
 
-// Conexión a MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => console.log('MongoDB connected'))
-    .catch(err => console.error('MongoDB connection error:', err));
-
 // Rutas
-app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/users', userRoutes);
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+// Inicia el servidor y abre la página en el navegador
+app.listen(puerto, async () => {
+    console.log(`Servidor en funcionamiento en http://localhost:${puerto}`);
+    await open(`http://localhost:${puerto}`);  // Abre la URL en el navegador
 });

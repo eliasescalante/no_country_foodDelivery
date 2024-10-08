@@ -1,8 +1,8 @@
-const User = require('/models/User');
-const jwt = require('jsonwebtoken');
+import User from '../models/User.js';
+import jwt from 'jsonwebtoken';
 
 // Registro de usuarios
-exports.registerUser = async (req, res) => {
+export const registerUser = async (req, res) => {
     const { name, email, password, role } = req.body;
     try {
         const userExists = await User.findOne({ email });
@@ -24,7 +24,7 @@ exports.registerUser = async (req, res) => {
 };
 
 // Autenticación (Login)
-exports.authUser = async (req, res) => {
+export const authUser = async (req, res) => {
     const { email, password } = req.body;
     try {
         const user = await User.findOne({ email });

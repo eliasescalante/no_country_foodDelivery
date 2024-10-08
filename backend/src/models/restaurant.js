@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const restaurantSchema = new mongoose.Schema({
     name: { type: String, required: true },
@@ -8,4 +8,4 @@ const restaurantSchema = new mongoose.Schema({
     owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Restaurant', restaurantSchema);
+export default mongoose.model('Restaurant', restaurantSchema);

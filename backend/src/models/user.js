@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
+import mongoose from 'mongoose';
+import bcrypt from 'bcryptjs';
 
 const userSchema = new mongoose.Schema({
     name: { type: String, required: true },
@@ -16,10 +16,11 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
 // Método para hashear contraseña antes de guardar
 userSchema.pre('save', async function (next) {
     if (!this.isModified('password')) {
-        next();
+        return next();
     }
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt);
+    next(); // Asegúrate de llamar a next() después de hashear
 });
 
-module.exports = mongoose.model('User', userSchema);
+export default mongoose.model('User', userSchema);
