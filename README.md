@@ -7,9 +7,6 @@ Descripción breve del proyecto, qué hace y su propósito.
 - [Características](#características)
 - [Tecnologías Usadas](#tecnologías-usadas)
 - [Instalación](#instalación)
-- [Uso](#uso)
-- [Contribución](#contribución)
-- [Licencia](#licencia)
 
 ## Características
 
