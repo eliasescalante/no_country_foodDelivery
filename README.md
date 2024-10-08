@@ -21,7 +21,7 @@ Descripción breve del proyecto, qué hace y su propósito.
 ## Tecnologías Usadas
 
 - **Backend:** Node.js, Express, MongoDB
-- **Frontend:** React, Redux (si aplica)
+- **Frontend:** [hay que editar]
 - **Otros:** CORS, JWT, bcrypt, etc.
 
 ## Instalación
@@ -29,4 +29,7 @@ Descripción breve del proyecto, qué hace y su propósito.
 1. Clona el repositorio:
 
    ```bash
-   git clone https://github.com/tu_usuario/nombre-del-repositorio.git
+   git clone https://github.com/No-Country-simulation/c21-39-n-node-react.git
+2. Para ejecutar el back ingresar a la carpeta Backend y ejecutar en consola:
+   ```bash
+   npm start
