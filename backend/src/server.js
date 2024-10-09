@@ -4,7 +4,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import configObject from './config/config.js';
 import userRoutes from './routes/userRoutes.js';
-import open from 'open';  // Importa el paquete open
+import open from 'open';  // Importa el paquete open para abrir de una la pagina al iniciar
 
 const app = express();
 const { mongo_url, puerto } = configObject;
