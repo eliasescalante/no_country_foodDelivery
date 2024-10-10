@@ -3,7 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import configObject from './config/config.js';
-import userRoutes from './routes/userRoutes.js';
+import routes from './routes/routes.js';
 import open from 'open';  // Importa el paquete open para abrir de una la pagina al iniciar
 
 const app = express();
@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.json());
 
 // Rutas
-app.use('/api/users', userRoutes);
+app.use('/api', routes);
 
 // Inicia el servidor y abre la página en el navegador
 app.listen(puerto, async () => {
