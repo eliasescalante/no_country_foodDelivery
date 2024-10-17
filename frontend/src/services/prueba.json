@@ -1,0 +1,168 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Juan Pérez",
+        "email": "juanperez@example.com",
+        "photo": "https://example.com/photos/juan.jpg",
+        "username": "juanp",
+        "whatsapp": "+1234567890",
+        "direccion": "123 Main St, Ciudad",
+        "restaurantesID": [1, 2]
+      },
+      {
+        "id": 2,
+        "name": "Maria García",
+        "email": "mariagarcia@example.com",
+        "photo": "https://example.com/photos/maria.jpg",
+        "username": "mariag",
+        "whatsapp": "+0987654321",
+        "direccion": "456 Oak St, Ciudad",
+        "restaurantesID": [3]
+      }
+    ],
+    "restaurants": [
+      {
+        "id": 1,
+        "name": "Burger Fast",
+        "description": "Deliciosas hamburguesas hechas a la parrilla.",
+        "dateCreated": "2023-06-15",
+        "ubicacionAddres": "Av. Siempre Viva 123, Ciudad",
+        "carta": [
+          {
+            "productoID": 1,
+            "productoID": 2
+          }
+        ],
+        "images": [
+          "https://example.com/images/burgerfast1.jpg",
+          "https://example.com/images/burgerfast2.jpg"
+        ],
+        "logo": "https://graffica.info/wp-content/uploads/2017/01/Kentucky-Fried-Chicken.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Pizza Express",
+        "description": "Las mejores pizzas a la piedra.",
+        "dateCreated": "2022-11-10",
+        "ubicacionAddres": "Calle Central 456, Ciudad",
+        "carta": [
+          {
+            "productoID": 3,
+            "productoID": 4
+          }
+        ],
+        "images": [
+          "https://example.com/images/pizzaexpress1.jpg",
+          "https://example.com/images/pizzaexpress2.jpg"
+        ],
+        "logo": "https://static-cse.canva.com/blob/951768/1650logotiposqueteinspiraran.png"
+      },
+      {
+        "id": 3,
+        "name": "Taco Fiesta",
+        "description": "Auténticos tacos mexicanos.",
+        "dateCreated": "2021-09-25",
+        "ubicacionAddres": "Paseo de la Reforma 789, Ciudad",
+        "carta": [
+          {
+            "productoID": 5,
+            "productoID": 6
+          }
+        ],
+        "images": [
+          "https://example.com/images/tacofiesta1.jpg",
+          "https://example.com/images/tacofiesta2.jpg"
+        ],
+        "logo": "https://example.com/logos/tacofiesta.png"
+      }
+    ],
+    "productos": [
+      {
+        "id": 1,
+        "name": "Hamburguesa Clásica",
+        "description": "Hamburguesa con carne 100% de res, lechuga, tomate y cebolla.",
+        "categoryId": 1,
+        "price": 5.99,
+        "images": [
+          "https://example.com/products/hamburguesa1.jpg"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Papas Fritas",
+        "description": "Crujientes papas fritas acompañadas de salsa ketchup.",
+        "categoryId": 2,
+        "price": 2.99,
+        "images": [
+          "https://example.com/products/papasfritas.jpg"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Pizza Margarita",
+        "description": "Pizza con salsa de tomate, mozzarella fresca y albahaca.",
+        "categoryId": 3,
+        "price": 8.99,
+        "images": [
+          "https://example.com/products/pizzamargarita.jpg"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Pizza Pepperoni",
+        "description": "Pizza con pepperoni y extra queso mozzarella.",
+        "categoryId": 3,
+        "price": 9.99,
+        "images": [
+          "https://example.com/products/pizzapepperoni.jpg"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Taco de Carnitas",
+        "description": "Taco con carne de cerdo asada, cilantro y cebolla.",
+        "categoryId": 4,
+        "price": 3.49,
+        "images": [
+          "https://example.com/products/tacocarnitas.jpg"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Taco al Pastor",
+        "description": "Taco con carne de cerdo marinada con piña y salsa verde.",
+        "categoryId": 4,
+        "price": 3.99,
+        "images": [
+          "https://example.com/products/tacoalpastor.jpg"
+        ]
+      }
+    ],
+    "categorias": [
+      {
+        "id": 1,
+        "name": "Hamburguesas",
+        "image": "https://example.com/categories/hamburguesas.jpg",
+        "description": "Todo tipo de hamburguesas."
+      },
+      {
+        "id": 2,
+        "name": "Acompañamientos",
+        "image": "https://example.com/categories/acompaniamientos.jpg",
+        "description": "Acompañamientos como papas fritas, ensaladas, etc."
+      },
+      {
+        "id": 3,
+        "name": "Pizzas",
+        "image": "https://example.com/categories/pizzas.jpg",
+        "description": "Variedad de pizzas artesanales."
+      },
+      {
+        "id": 4,
+        "name": "Tacos",
+        "image": "https://example.com/categories/tacos.jpg",
+        "description": "Auténticos tacos mexicanos."
+      }
+    ]
+  }
