@@ -6,6 +6,9 @@ const userSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     role: { type: String, enum: ['cliente', 'restaurante', 'repartidor'], required: true },
+    whatsapp: {type: String},
+    direccion: {type: String},
+    restaurantesID: [],
 }, { timestamps: true });
 
 // Método para encriptar contraseña
