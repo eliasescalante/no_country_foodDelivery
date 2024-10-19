@@ -1,10 +1,17 @@
-import { useState } from 'react'
+import React,{ useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import './App.css'
+
+//layouts
 import Header from './layouts/header/header.jsx'
-import Home from './pages/home/home.jsx'
 import Footer from './layouts/footer/footer.jsx'
 
-import './App.css'
+//pages
+import Home from './pages/home/home.jsx'
+import Categories from './pages/categories/categories.jsx'
+import Restaurants from './pages/restaurants/restaurants.jsx';
+
+
 
 function App() {
 
@@ -17,6 +24,26 @@ function App() {
             <div>
              <Header /> 
               <Home />
+              <Footer />
+            </div>
+          }
+        />
+        <Route
+          path="/categories"
+          element={
+            <div>
+             <Header /> 
+              <Categories />
+              <Footer />
+            </div>
+          }
+        />
+        <Route
+          path="/restaurants"
+          element={
+            <div>
+             <Header /> 
+              <Restaurants />
               <Footer />
             </div>
           }

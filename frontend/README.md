@@ -7,7 +7,15 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+
+
+
 # FRONT FOODELIVERY
+
+## Link canva
+
+- https://www.canva.com/design/DAGTHqAxOLY/iSRXIugx5oqmt8vxpyqqgg/view?utm_content=DAGTHqAxOLY&utm_campaign=designshare&utm_medium=link&utm_source=editor
+
 
 ## Descripcion
  - Se armaron diferentes views en este caso publicas (Home(FindFood), Categories, Restaurant ).

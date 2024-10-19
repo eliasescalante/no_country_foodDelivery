@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { IoLocationSharp } from "react-icons/io5";
+
+
+
+
 import SliderOne from "../../components/sliders/sliderOne";
 
 import { Parallax } from 'react-scroll-parallax';
@@ -17,6 +21,7 @@ import CardPromocional from "../../components/cardPromocional/cardPromocional";
 
 
 import jsonData from '../../services/prueba.json'
+import Ubicacion from '../../components/ubicacion.jsx'
 
 const home = () => {
   const [data, setData] = useState(null);
@@ -29,6 +34,13 @@ const home = () => {
   //console.log(data)
 
 
+
+  /************ End ubnicacion ********** */
+
+
+
+
+
   return (
     <div className="w-full  px-10 flex flex-col gap-20 pb-20">
       <div className="flex h-dvh  aling-center">
@@ -39,11 +51,13 @@ const home = () => {
           <div className="flex flex-wrap h-48 flex-col justify-center w-full content-center">
             <div className="w-2/3 flex flex-col gap-4">
               <div>
-                <div className="flex">
+                <div className="flex items-center">
                   <div className="flex text-textTerceary text-4xl justify-items-start -ml-2">
                     <IoLocationSharp />
                   </div>
-                  <div className="text-2xl font-boldLigth">Villavicencio, Meta</div>
+                  <div className="text-xl font-boldLigth h-full items-center flex">
+                      <Ubicacion />
+                  </div>
                 </div>
                 <div className="font-bold">
                   <div className="text-3xl">Find restaurants in my area</div>
