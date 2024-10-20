@@ -1,8 +1,16 @@
-import User from "../models/user.model.js";
-import Cart from "../models/cart.model.js";
-import jwt from "jsonwebtoken";
-import mongoose from 'mongoose';
+// controllers/restaurant.controller.js
+import Restaurant from '../models/restaurant.model.js';
 
+class RestaurantController { //agregue el metodo pero no lo probe
+    // Método para obtener todos los restaurantes
+    async allRestaurant(req, res) {
+        try {
+            const restaurants = await Restaurant.find();
+            res.status(200).json(restaurants);
+        } catch (error) {
+            res.status(500).json({ message: 'Error obteniendo los restaurantes: ' + error.message });
+        }
+    }
+}
 
-// Registro de usuarios
-export const allRestaurant = async (req, res) => {}
+export default new RestaurantController();
