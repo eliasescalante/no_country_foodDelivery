@@ -9,5 +9,5 @@ const foodSchema = new mongoose.Schema({
   restaurant: { type: mongoose.Schema.Types.ObjectId, ref: "Restaurant" },
 });
 
-const Food = mongoose.model("foods", restaurantSchema);
+const Food = mongoose.model("foods", foodSchema);
 export default Food;

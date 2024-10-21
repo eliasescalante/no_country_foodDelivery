@@ -1,45 +1,63 @@
 import User from "../models/user.model.js";
 import Cart from "../models/cart.model.js";
+import Restaurant from "../models/restaurant.model.js";
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 
 // Registro de usuarios
 export const registerUser = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, description, menu, address, neighborhood } =
+    req.body;
   try {
     const userExists = await User.findOne({ email });
     if (userExists)
       return res.status(400).json({ message: "El usuario ya existe" });
 
-    //Si no existe, creo un usuario nuevo, al cual se asociará un carrito
-    let cart = new Cart({ order: [] });
-    
-    
-    await cart.save();
-    console.log('Carrito:', cart);
+    let role;
+    let user;
 
     // Determino el rol del usuario según el email
-    let role;
-    if (email === "restaurante@gmail.com") {
-      role = "restaurante";
-    } else if (email === "repartidor@gmail.com") {
-      role = "repartidor";
-    } else {
+    if (email.endsWith("@cliente.com")) {
       role = "cliente";
-    }
 
-    const user = new User({ name, email, password, role, cart: cart._id  });
-    
-    
-    await user.save();
-    console.log('Usuario:', user);
+      // Creo el usuario con un carrito
+      user = new User({ name, email, password, role });
+      await user.save();
+
+      const cart = new Cart({ order: [] });
+      await cart.save();
+      user.cart = cart._id;
+      await user.save();
+    } else if (email.endsWith("@restaurant.com")) {
+      role = "restaurant";
+
+      user = new User({ name, email, password, role });
+      await user.save();
+
+      // Creo el restaurante con los campos específicos y asocio al usuario
+      const restaurant = new Restaurant({
+        name: name,
+        description: description,
+        menu: menu || [],
+        address: address,
+        neighborhood: neighborhood,
+        owner: user._id, // Asocio el restaurant con el usuario
+      });
+
+      await restaurant.save();
+    } else {
+      role = "repartidor";
+
+      // Creo el usuario con rol 'repartidor'
+      user = new User({ name, email, password, role });
+      await user.save();
+    }
 
     res.status(201).json({
       _id: user._id,
       name: user.name,
       email: user.email,
       role: user.role,
-      cart: user.cart,
       token: generateToken(user._id),
     });
   } catch (error) {

@@ -1,9 +1,10 @@
 // controllers/restaurant.controller.js
 import Restaurant from '../models/restaurant.model.js';
+import mongoose from "mongoose";
 
-class RestaurantController { //agregue el metodo pero no lo probe
+class RestaurantController { 
     // Método para obtener todos los restaurantes
-    async allRestaurant(req, res) {
+    async allRestaurants(req, res) {
         try {
             const restaurants = await Restaurant.find();
             res.status(200).json(restaurants);

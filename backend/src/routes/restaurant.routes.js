@@ -3,6 +3,6 @@ import RestaurantController from '../controllers/restaurant.controller.js';
 
 const router = express.Router();
 
-router.get('/restaurant', RestaurantController.allRestaurant);
+router.get('/', RestaurantController.allRestaurants);
 
 export default router;
