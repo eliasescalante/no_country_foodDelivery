@@ -7,6 +7,7 @@ const restaurantSchema = new mongoose.Schema(
     menu: [{ type: mongoose.Schema.Types.ObjectId, ref: "Food" }],
     address: { type: String, required: true },
     neighborhood: { type: String, required: true },
+    city: { type: String, required: true },
     owner: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   },
   { timestamps: true }
