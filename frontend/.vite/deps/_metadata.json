@@ -1,0 +1,91 @@
+{
+  "hash": "a1b226f5",
+  "configHash": "dc51b5de",
+  "lockfileHash": "2d948ca7",
+  "browserHash": "d7573e53",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "5c82a9ed",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "cf5facba",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "1b819430",
+      "needsInterop": false
+    },
+    "react-icons/fa": {
+      "src": "../../node_modules/react-icons/fa/index.mjs",
+      "file": "react-icons_fa.js",
+      "fileHash": "896cf916",
+      "needsInterop": false
+    },
+    "react-icons/io5": {
+      "src": "../../node_modules/react-icons/io5/index.mjs",
+      "file": "react-icons_io5.js",
+      "fileHash": "e201b6af",
+      "needsInterop": false
+    },
+    "react-scroll-parallax": {
+      "src": "../../node_modules/react-scroll-parallax/dist/react-scroll-parallax.esm.js",
+      "file": "react-scroll-parallax.js",
+      "fileHash": "3824a8fc",
+      "needsInterop": false
+    },
+    "react-slick": {
+      "src": "../../node_modules/react-slick/lib/index.js",
+      "file": "react-slick.js",
+      "fileHash": "958dfe02",
+      "needsInterop": true
+    },
+    "mapbox-gl": {
+      "src": "../../node_modules/mapbox-gl/dist/mapbox-gl.js",
+      "file": "mapbox-gl.js",
+      "fileHash": "1e7b8d0a",
+      "needsInterop": true
+    },
+    "@mapbox/mapbox-gl-geocoder": {
+      "src": "../../node_modules/@mapbox/mapbox-gl-geocoder/lib/index.js",
+      "file": "@mapbox_mapbox-gl-geocoder.js",
+      "fileHash": "137ca6b0",
+      "needsInterop": true
+    },
+    "react-icons/tb": {
+      "src": "../../node_modules/react-icons/tb/index.mjs",
+      "file": "react-icons_tb.js",
+      "fileHash": "70669ef1",
+      "needsInterop": false
+    },
+    "react-icons/gr": {
+      "src": "../../node_modules/react-icons/gr/index.mjs",
+      "file": "react-icons_gr.js",
+      "fileHash": "a2020455",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-ZIYUGMGG": {
+      "file": "chunk-ZIYUGMGG.js"
+    },
+    "chunk-2CVX3UOB": {
+      "file": "chunk-2CVX3UOB.js"
+    },
+    "chunk-R3G2ZNRT": {
+      "file": "chunk-R3G2ZNRT.js"
+    },
+    "chunk-65KY755N": {
+      "file": "chunk-65KY755N.js"
+    },
+    "chunk-V4OQ3NZ2": {
+      "file": "chunk-V4OQ3NZ2.js"
+    }
+  }
+}

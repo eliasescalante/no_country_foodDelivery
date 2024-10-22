@@ -1,16 +1,34 @@
 import React, { useEffect, useState } from "react";
 import jsonData from "../../services/prueba.json";
 
+import { getFoods } from "../../services/getFoods";
+
 import CardProducts from "../../components/cards/cardProducts";
 
 const Categories = () => {
   const [data, setData] = useState(null);
 
+  const [foods, setFoods] = useState(null)
+
   useEffect(() => {
-    setData(jsonData);
+    const fetchFoods = async () => {
+        try {
+          const response = await getFoods();
+          setFoods(response[0]?.productos || []);
+       //   console.log("user data=> ",data);
+        } catch (error) {
+          console.error("Error fetching task data:", error);
+        }
+      }
+    fetchFoods();
   }, []);
 
-  console.log(data);
+  //console.log(foods);
+
+
+
+
+
 
   return (
     <div className="px-10 py-20 flex flex-col gap-10">
@@ -58,7 +76,7 @@ const Categories = () => {
       <div className="pt-20">
         <div>
           <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-              {data?.productos?.map((x)=>(
+              {foods?.map((x)=>(
                <CardProducts key={x.id} info={x} />
               ))}
           </div>
