@@ -1,0 +1,19 @@
+### Obtener todos los alimentos
+GET http://localhost:8080/api/foods HTTP/1.1
+Accept: application/json
+
+
+
+
+### Crear un nuevo alimento
+POST http://localhost:8080/api/foods/add HTTP/1.1
+Content-Type: application/json
+
+ {
+        "name": "Tiramisú",
+        "description": "Clásico tiramisú italiano con capas de bizcocho empapado en café y crema de mascarpone.",
+        "category": "postres",
+        "price": 8.50,
+        "imageUrl": "https://www.gastrolabweb.com/u/fotografias/m/2021/4/30/f1280x720-34456_121271_5050.jpg",
+        "restaurantId": "6715e6a41df1fb57466391c8"
+    }

@@ -34,7 +34,7 @@ class FoodController {
      // Método para agregar un producto de comida en la db
     async addFood(req, res) {
         try {
-            const { name, price, description, category, imageUrl, restaurantId } = req.query;
+            const { name, price, description, category, imageUrl, restaurantId } = req.body;
             if (!name || !price || !restaurantId) {
                 return res.status(400).json({ message: 'Nombre, precio y restaurantId son requeridos.' });
             }

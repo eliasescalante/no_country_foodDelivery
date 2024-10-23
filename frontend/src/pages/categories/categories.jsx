@@ -14,7 +14,9 @@ const Categories = () => {
     const fetchFoods = async () => {
         try {
           const response = await getFoods();
-          setFoods(response[0]?.productos || []);
+       
+          setFoods(response);
+          
        //   console.log("user data=> ",data);
         } catch (error) {
           console.error("Error fetching task data:", error);
@@ -77,7 +79,7 @@ const Categories = () => {
         <div>
           <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
               {foods?.map((x)=>(
-               <CardProducts key={x.id} info={x} />
+               <CardProducts key={x._id} info={x} />
               ))}
           </div>
         </div>

@@ -3,6 +3,13 @@ import mapboxgl from "mapbox-gl";
 import { IoLocationSharp } from "react-icons/io5";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 
+
+
+
+
+
+
+
 const MapRestaurants = () => {
   const token =
     "pk.eyJ1IjoiZHV2YW5hIiwiYSI6ImNrbTZtcWV4NTAwa3gydXFmbGs3bG0wd3MifQ.bWbS5TJuMSdntDXb_7l4aQ";
@@ -10,7 +17,7 @@ const MapRestaurants = () => {
   const restauranteGuardado = JSON.parse(
     localStorage.getItem("ubicacionUsuario")
   );
-  console.log(restauranteGuardado);
+  //console.log(restauranteGuardado);
 
   const restaurantes = [{ ubicacion: restauranteGuardado.center }];
 

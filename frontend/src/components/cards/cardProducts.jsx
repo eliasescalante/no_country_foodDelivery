@@ -1,12 +1,39 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
+import { getRestaurantById }  from "../../services/getRestaurants";
+
+
+
 
 const cardProducts = ({info}) => {
-    console.log(info)
+  const [restaurant, setRestaurant] = useState({});
+
+  const idRestaurant = info?.restaurant
+  //console.log(idRestaurant)
+
+  useEffect(() => {
+    const fetchFoods = async () => {
+      try {
+        const response = await getRestaurantById(idRestaurant);
+
+       // console.log(response)
+        setRestaurant(response);
+        //  console.log("user data=> ",data);
+      } catch (error) {
+        console.error("Error fetching task data:", error);
+      }
+    };
+    fetchFoods();
+  }, []);
+
+
+
+
+    //console.log(info)
   return (
     <div className="card bg-base-100 w-26 shadow-xl border-0 cursor-pointer hover:scale-105 duration-500">
       <figure>
         <img
-          src= {info.images[0]}
+          src= {info.imageUrl}
           alt="Shoes"
           className="w-full h-40"
         />
@@ -24,7 +51,7 @@ const cardProducts = ({info}) => {
                 <h2 className="card-title">{info.name}</h2>
                 </div>
                 <div>
-                    name restaurant
+                    {restaurant?.name}
                 </div>
             </div>
         </div>

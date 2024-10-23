@@ -17,8 +17,8 @@ router.get(
 // Ruta para agregar comida --> falta agregar un filtro paraque solo acceda un cliente que sea vendedor, para limitar la vista
 router.post(
   "/add",
-  protect,
-  authorizeRoles("restaurant"),
+  //protect,
+  //authorizeRoles("restaurant"),
   FoodController.addFood
 );
 

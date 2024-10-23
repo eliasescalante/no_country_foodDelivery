@@ -1,18 +1,31 @@
 import React, { useEffect, useState } from "react";
 import jsonData from "../../services/prueba.json";
 
+import { getRestaurants } from "../../services/getRestaurants";
+
 import CardRestaurants from "../../components/cards/cardRestaurants";
 import MapRestaurants from "../../components/mapRestaurants";
 
 const Restaurants = () => {
   const [data, setData] = useState(null);
+  const [restaurants, setRestaurants] = useState(null);
 
   useEffect(() => {
-    setData(jsonData);
+    const fetchFoods = async () => {
+      try {
+        const response = await getRestaurants();
+        setRestaurants(response);
+     //  console.log("user data=> ",data);
+      } catch (error) {
+        console.error("Error fetching task data:", error);
+      }
+    }
+  fetchFoods();
   }, []);
 
-  console.log(data);
 
+
+  console.log(restaurants)
 
   return (
 
@@ -35,8 +48,8 @@ const Restaurants = () => {
       <div className="flex w-full h-screen gap-2">
 
         <div className="flex flex-col w-1/2 p-5 overflow-y-auto gap-6">
-            {data?.restaurants?.map((x)=>(
-             <CardRestaurants key={x.id} info={x} />
+            {restaurants?.map((x)=>(
+             <CardRestaurants key={x._id} info={x} />
             ))}
         </div>
 

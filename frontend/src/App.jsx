@@ -10,6 +10,7 @@ import Footer from './layouts/footer/footer.jsx'
 import Home from './pages/home/home.jsx'
 import Categories from './pages/categories/categories.jsx'
 import Restaurants from './pages/restaurants/restaurants.jsx';
+import RestaurantId from './pages/restaurantId/restaurantId.jsx';
 
 
 
@@ -44,6 +45,18 @@ function App() {
             <div>
              <Header /> 
               <Restaurants />
+              <Footer />
+            </div>
+          }
+        />
+
+
+        <Route
+          path="/restaurants/:id"
+          element={
+            <div>
+             <Header /> 
+              <RestaurantId />
               <Footer />
             </div>
           }
