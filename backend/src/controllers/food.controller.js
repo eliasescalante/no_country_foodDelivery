@@ -14,7 +14,7 @@ class FoodController {
     }
 
      // Método para obtener productos de comida por categoría o nombre ---> aca no se si pasarlo a params o dejarlo por query
-    async searchFoodProducts(req, res) {
+    async searchFood(req, res) {
         try {
             const { category, name } = req.query;
             let filter = { category: 'food' };
@@ -24,7 +24,7 @@ class FoodController {
             if (name) {
                 filter.title = { $regex: name, $options: 'i' };
             }
-            const products = await Product.find(filter);
+            const products = await Food.find(filter);
             res.status(200).json(products);
         } catch (error) {
             res.status(500).json({ message: 'Error buscando productos de comida: ' + error.message });
@@ -32,7 +32,7 @@ class FoodController {
     }
 
      // Método para agregar un producto de comida en la db
-    async addFoodProduct(req, res) {
+    async addFood(req, res) {
         try {
             const { name, price, description, category, imageUrl, restaurantId } = req.query;
             if (!name || !price || !restaurantId) {
