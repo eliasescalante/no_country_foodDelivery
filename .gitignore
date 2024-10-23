@@ -1,2 +1,8 @@
 node_modules
 .env*
+
+frontend/.vite/deps/_metadata.json
+frontend/.vite/deps/package.json
+
+
+frontend/
