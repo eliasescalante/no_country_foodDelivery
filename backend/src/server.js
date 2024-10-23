@@ -2,6 +2,7 @@
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import cookieParser from "cookie-parser";
 import configObject from './config/config.js';
 import open from 'open';  // Importa el paquete open para abrir de una la pagina al iniciar
 import userRoutes from './routes/user.routes.js';
@@ -17,6 +18,7 @@ mongoose.connect(mongo_url)
 
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
 
 // Rutas
 app.use('/api/users', userRoutes);

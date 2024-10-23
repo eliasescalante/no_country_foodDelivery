@@ -6,8 +6,16 @@ import mongoose from "mongoose";
 
 // Registro de usuarios
 export const registerUser = async (req, res) => {
-  const { name, email, password, description, menu, address, neighborhood } =
-    req.body;
+  const {
+    name,
+    email,
+    password,
+    description,
+    menu,
+    address,
+    neighborhood,
+    city,
+  } = req.body;
   try {
     const userExists = await User.findOne({ email });
     if (userExists)
@@ -41,6 +49,7 @@ export const registerUser = async (req, res) => {
         menu: menu || [],
         address: address,
         neighborhood: neighborhood,
+        city: city,
         owner: user._id, // Asocio el restaurant con el usuario
       });
 
@@ -53,12 +62,22 @@ export const registerUser = async (req, res) => {
       await user.save();
     }
 
+    // Genero token
+    const token = generateToken(user._id);
+
     res.status(201).json({
       _id: user._id,
       name: user.name,
       email: user.email,
       role: user.role,
-      token: generateToken(user._id),
+      token: token,
+    });
+
+    //Establezco el token como cookie
+    res.cookie("cookieToken", token, {
+      maxAge: 3600000,
+      httpOnly: true,
+      sameSite: "strict",
     });
   } catch (error) {
     console.error("Error al registrar usuario:", error);
@@ -72,12 +91,20 @@ export const authUser = async (req, res) => {
   try {
     const user = await User.findOne({ email });
     if (user && (await user.matchPassword(password))) {
+      const token = generateToken(user._id);
+
       res.json({
         _id: user._id,
         name: user.name,
         email: user.email,
         role: user.role,
-        token: generateToken(user._id),
+        token: token,
+      });
+
+      res.cookie("cookieToken", token, {
+        maxAge: 3600000, // 1 hora
+        httpOnly: true,
+        sameSite: "strict",
       });
     } else {
       res.status(401).json({ message: "Credenciales inválidas" });
@@ -87,7 +114,7 @@ export const authUser = async (req, res) => {
   }
 };
 
-// Generar JWT
+// Genero JWT
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: "30d",
