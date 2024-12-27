@@ -1,6 +1,6 @@
 # FoodDelivery
 
-Descripción breve del proyecto, qué hace y su propósito.
+Proyecto de pedidos de comida locales pensada como una aplicacion que facilite el uso de pedidos online para los restos de comida caseros con un costo muy bajo
 
 ## Tabla de Contenidos
 
@@ -10,10 +10,8 @@ Descripción breve del proyecto, qué hace y su propósito.
 
 ## Características
 
-- Característica 1
-- Característica 2
-- Característica 3
-- Característica 4
+- Funcionalidades para cada usuario (cliente, vendedor, delivery)
+- metodos de pago y cobro
 
 ## Tecnologías Usadas
 
